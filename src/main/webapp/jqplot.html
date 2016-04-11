@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Jqplot Native Chart</title>
+
+        <meta charset="UTF-8" />
+
+        <script language="javascript" type="text/javascript" src="resources/js/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="resources/js/jquery.jqplot.js"></script>
+        <script language="javascript" type="text/javascript" src="resources/js/plugins/jqplot.dateAxisRenderer.js"></script>
+        <script language="javascript" type="text/javascript" src="resources/js/plugins/jqplot.cursor.js"></script>
+        <script language="javascript" type="text/javascript" src="resources/js/plugins/jqplot.highlighter.js"></script>
+        <script language="javascript" type="text/javascript" src="resources/js/plugins/jqplot.canvasAxisTickRenderer.js"></script>
+        <script language="javascript" type="text/javascript" src="resources/js/plugins/jqplot.canvasTextRenderer.js"></script>
+        <link rel="stylesheet" type="text/css" href="resources/css/jquery.jqplot.css" />
+    </head>
+    <body>
+
+        <div id="chart" style="height: 400px"></div>
+
+        <script>
+
+            $(document).ready(function () {
+                $.jqplot.config.enablePlugins = true;
+
+                var lines = [[1334856823000, 2], [1334856853000, 1], [1334856883000, 0], [1334856913000, 4], [1334856914000, 13],
+                    [1334856943000, 16], [1334856973000, 23], [1334857003000, 24], [1334857033000, 36], [1334857063000, 14], [1334857093000, 1]];
+                
+                $.jqplot('chart', [lines], {
+                    title: "Jqplot Native",
+                    axes: {
+                        xaxis: {
+                            renderer: $.jqplot.DateAxisRenderer,
+                            tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                            tickOptions: {
+                                formatString: '%e/%b %H:%M',
+                                angle: -30
+                            }
+                        },
+                        yaxis: {
+                            renderer: $.jqplot.LinearAxisRenderer,
+                            tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                            min: 0
+                        }
+                    },
+                    cursor: {zoom: true}
+                });
+
+            });
+
+        </script>
+
+        <br /><br />
+
+        <button onclick="history.back(-1)" >Back</button>
+    </body>
+</html>
+
