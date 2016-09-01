@@ -9,16 +9,8 @@
     <h:body>
         <p:chart type="line" model="#{chartController.model}" id="chart" style="height: 400px" />
 
-        <script>
-
-            $(document).ready(function () {
-                $.jqplot.config.enablePlugins = true;
-            });
-
-        </script>
-
         <br /><br />
-
+        
         <button onclick="history.back(-1)" >Back</button>
     </h:body>
 </html>

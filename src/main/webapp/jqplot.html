@@ -20,13 +20,14 @@
         <div id="chart" style="height: 400px"></div>
 
         <script>
-
+            //<![CDATA[
             $(document).ready(function () {
+
                 $.jqplot.config.enablePlugins = true;
 
                 var lines = [[1334856823000, 2], [1334856853000, 1], [1334856883000, 0], [1334856913000, 4], [1334856914000, 13],
                     [1334856943000, 16], [1334856973000, 23], [1334857003000, 24], [1334857033000, 36], [1334857063000, 14], [1334857093000, 1]];
-                
+
                 $.jqplot('chart', [lines], {
                     title: "Jqplot Native",
                     axes: {
@@ -46,9 +47,8 @@
                     },
                     cursor: {zoom: true}
                 });
-
             });
-
+            //]]>
         </script>
 
         <br /><br />
